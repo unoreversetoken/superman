@@ -149,6 +149,12 @@
             border-bottom: 1px solid rgba(255, 215, 0, 0.1);
         }
 
+        .main-content {
+            padding-top: 80px; /* Height of navbar */
+            position: relative;
+            z-index: 1;
+        }
+
         #particles-js {
             position: fixed;
             top: 0;
@@ -213,19 +219,21 @@
             .card-hover:hover {
                 transform: translateY(-5px) scale(1.01);
             }
+            
+            .main-content {
+                padding-top: 100px;
+            }
+            
+            .mobile-title {
+                margin-top: -20px;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
 <body class="text-white">
     <div id="particles-js"></div>
     <div id="heroBackground"></div>
-
-    <!-- Add mobile title above navbar -->
-    <div class="md:hidden text-center pt-4 pb-2 relative z-[10000]">
-        <h1 class="text-4xl font-bold text-gradient">
-            The Super Coin Has Arrived
-        </h1>
-    </div>
 
     <nav class="navbar">
         <div class="container mx-auto px-6 py-4">
@@ -264,8 +272,15 @@
         </div>
     </nav>
 
-    <main class="main-wrapper">
-        <section class="min-h-screen flex items-center pt-20 md:pt-32 overflow-hidden">
+    <main class="main-wrapper main-content">
+        <!-- Mobile title -->
+        <div class="md:hidden text-center mobile-title">
+            <h1 class="text-4xl font-bold text-gradient px-4">
+                The Super Coin<br>Has Arrived
+            </h1>
+        </div>
+
+        <section class="min-h-screen flex items-center pt-4 md:pt-32 overflow-hidden">
             <div class="container mx-auto px-4 md:px-6">
                 <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
                     <div class="space-y-6 md:space-y-10 text-center md:text-left" data-aos="fade-right">
